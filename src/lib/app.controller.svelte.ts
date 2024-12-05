@@ -7,6 +7,8 @@ export default function createController() {
 	let winnerId = $state<string | undefined>(undefined);
 
 	function handleAddParticipant(e: Event) {
+		e.preventDefault();
+
 		const form = e.target as HTMLFormElement;
 		const nicknameInput = form.nickname as HTMLInputElement;
 		const multiplierInput = form.multiplier as HTMLInputElement;
@@ -22,6 +24,8 @@ export default function createController() {
 
 		nicknameInput.value = '';
 		multiplierInput.value = '';
+
+		nicknameInput.focus();
 	}
 
 	function handleDraw() {

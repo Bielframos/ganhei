@@ -96,10 +96,9 @@
 					type="text"
 					id="nickname"
 					name="nickname"
-					placeholder="Neymar"
+					placeholder="Gabriel"
 					class="w-full rounded-2xl border-2 border-blue-6 bg-[transparent] px-8 py-4 text-xl text-blue-12 ring-blue-9 placeholder:text-white/60 focus:outline-none focus:ring-4"
 					autocomplete="off"
-					autofocus
 					required
 				/></label
 			>
@@ -112,7 +111,7 @@
 					type="text"
 					id="multiplier"
 					name="multiplier"
-					placeholder="12"
+					placeholder="10"
 					class="w-full rounded-2xl border-2 border-blue-6 bg-[transparent] px-8 py-4 text-xl text-blue-12 ring-blue-9 placeholder:text-white/60 focus:outline-none focus:ring-4"
 					autocomplete="off"
 				/></label
@@ -121,14 +120,14 @@
 			<button
 				aria-label="Adicionar participante"
 				type="submit"
-				class="flex h-16 items-center justify-center gap-2 rounded-2xl border-4 border-b-8 border-blue-7 bg-blue-9 text-xl transition-all hover:bg-blue-10 focus:outline-none active:border-b-4 md:w-16"
+				class="flex h-16 items-center justify-center gap-2 rounded-2xl border-4 border-b-8 border-blue-7 bg-blue-9 text-xl transition-all hover:bg-blue-10 focus:bg-blue-10 focus:outline-none active:border-b-4 md:w-16"
 				><Plus /> <span class="md:hidden">Adicionar</span></button
 			>
 		</form>
 
 		<div class="relative">
 			<button
-				class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-2xl border-4 border-b-8 border-blue-7 bg-blue-9 px-8 py-4 text-3xl transition-all hover:bg-blue-10 active:border-b-4"
+				class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-2xl border-4 border-b-8 border-blue-7 bg-blue-9 px-8 py-4 text-3xl transition-all hover:bg-blue-10 focus:bg-blue-10 focus:outline-none active:border-b-4"
 				onclick={() => controller.handleDraw()}>Sortear</button
 			>
 			<hr class="my-20 border-4 border-blue-2" />
@@ -154,13 +153,13 @@
 		<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
 		<div
 			id="scrim"
-			class="absolute inset-0 z-10 flex h-full w-full items-center justify-center bg-blue-1/90"
+			class="absolute inset-0 z-10 flex h-fit min-h-[100dvh] w-full items-center justify-center bg-blue-1/90 py-10"
 			onclick={() => triggerShowInfo()}
 			transition:fade
 		>
 			<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_noninteractive_element_interactions -->
 			<article
-				class="relative w-full max-w-md rounded-2xl bg-blue-2 p-10"
+				class="relative mx-4 w-full max-w-md rounded-2xl bg-blue-2 p-10"
 				onclick={(e) => {
 					e.stopPropagation();
 				}}
@@ -244,7 +243,7 @@
 	<!-- GitHub Corner -->
 	<a
 		href="https://github.com/Bielframos/ganhei"
-		class="github-corner"
+		class="github-corner -z-50"
 		aria-label="Veja a fonte no GitHub"
 		><svg
 			width="80"
