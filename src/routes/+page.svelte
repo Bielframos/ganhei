@@ -4,6 +4,7 @@
 	import { onMount, untrack } from 'svelte';
 	import { fade, fly } from 'svelte/transition';
 	import { DotLottieSvelte } from '@lottiefiles/dotlottie-svelte';
+	import Head from './Head.svelte';
 
 	const controller = createController();
 	let winnerId = $derived(controller.winnerId);
@@ -32,6 +33,8 @@
 		});
 	});
 </script>
+
+<Head />
 
 <main class="mx-auto mb-10 max-w-4xl px-6">
 	<header class="flex justify-between py-8">
