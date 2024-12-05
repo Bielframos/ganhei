@@ -11,19 +11,19 @@ export default function createController() {
 
 		const form = e.target as HTMLFormElement;
 		const nicknameInput = form.nickname as HTMLInputElement;
-		const multiplierInput = form.multiplier as HTMLInputElement;
+		const luckyPointsInput = form.luckyPoints as HTMLInputElement;
 		const formData = new FormData(form);
 
 		const nickname = formData.get('nickname')?.toString();
-		const points = formData.get('multiplier')?.toString() || '0';
+		const luckyPoints = formData.get('luckyPoints')?.toString() || '0';
 
-		if (nickname && points) {
-			raffle.addParticipant(nickname, parseInt(points));
+		if (nickname && luckyPoints) {
+			raffle.addParticipant(nickname, parseInt(luckyPoints));
 			participants = raffle.getParticipants();
 		}
 
 		nicknameInput.value = '';
-		multiplierInput.value = '';
+		luckyPointsInput.value = '';
 
 		nicknameInput.focus();
 	}

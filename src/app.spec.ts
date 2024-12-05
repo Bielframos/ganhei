@@ -15,10 +15,10 @@ describe('Testa o funcionamneto da aplicação', () => {
 
 	it('Deve permitir adicionar participantes e atualizar o estado', () => {
 		const raffle = createRaffle();
-		const { id, nickname, multiplier } = raffle.addParticipant('Bielframos', 20);
+		const { id, nickname, luckyPoints } = raffle.addParticipant('Bielframos', 20);
 		expect(typeof id === 'string' && id.length === 36).toBe(true);
 		expect(nickname).toBe('Bielframos');
-		expect(multiplier).toBe(20);
+		expect(luckyPoints).toBe(20);
 	});
 
 	it('Um participante deve ter tickets equivalentes a sua pontuação', () => {

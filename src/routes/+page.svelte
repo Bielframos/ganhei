@@ -15,6 +15,12 @@
 		showInfo = !showInfo;
 	}
 
+	function handleLuckyPointsInput(e: Event) {
+		const input = e.target as HTMLInputElement;
+		let value = input.value.replace(/\D/g, '');
+		input.value = value;
+	}
+
 	$effect(() => {
 		if (winnerId) {
 			const timer = setInterval(() => {
@@ -109,11 +115,12 @@
 				>
 				<input
 					type="text"
-					id="multiplier"
-					name="multiplier"
+					id="luckyPoints"
+					name="luckyPoints"
 					placeholder="10"
 					class="w-full rounded-2xl border-2 border-blue-6 bg-[transparent] px-8 py-4 text-xl text-blue-12 ring-blue-9 placeholder:text-white/60 focus:outline-none focus:ring-4"
 					autocomplete="off"
+					oninput={handleLuckyPointsInput}
 				/></label
 			>
 
@@ -142,7 +149,7 @@
 					<span class="text-3xl">{participant.nickname}</span>
 					<span
 						class="flex items-center gap-2 rounded-2xl bg-blue-3 px-4 py-2 data-[disabled=true]:hidden"
-						data-disabled={participant.multiplier === 0}>{participant.multiplier} <Clover /></span
+						data-disabled={participant.luckyPoints === 0}>{participant.luckyPoints} <Clover /></span
 					>
 				</div>
 			{/each}

@@ -1,9 +1,9 @@
-export type Participant = { id: string; nickname: string; multiplier: number };
+export type Participant = { id: string; nickname: string; luckyPoints: number };
 
 export type Raffle = {
 	getParticipants: () => Participant[];
 	getTickets: () => string[];
-	addParticipant: (nickname: string, multiplier: number) => Participant;
+	addParticipant: (nickname: string, luckyPoints: number) => Participant;
 	draw: () => string;
 	clear: () => void;
 };
@@ -12,9 +12,9 @@ export default function createRaffle(): Raffle {
 	let participants: Participant[] = [];
 	let tickets: string[] = [];
 
-	function addParticipant(nickname: string, multiplier: number): Participant {
-		const newParticipant = { id: crypto.randomUUID(), nickname, multiplier };
-		const newParticipantTickets = new Array(multiplier).fill(newParticipant.id);
+	function addParticipant(nickname: string, luckyPoints: number): Participant {
+		const newParticipant = { id: crypto.randomUUID(), nickname, luckyPoints };
+		const newParticipantTickets = new Array(luckyPoints).fill(newParticipant.id);
 
 		tickets = tickets.concat(newParticipantTickets);
 		participants.push(newParticipant);
