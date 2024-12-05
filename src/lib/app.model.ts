@@ -16,7 +16,7 @@ export default function createRaffle(): Raffle {
 		const newParticipant = { id: crypto.randomUUID(), nickname, multiplier };
 		const newParticipantTickets = new Array(multiplier).fill(newParticipant.id);
 
-		tickets.push(...newParticipantTickets);
+		tickets = tickets.concat(newParticipantTickets);
 		participants.push(newParticipant);
 		return newParticipant;
 	}

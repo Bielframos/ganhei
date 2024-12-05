@@ -23,17 +23,17 @@ describe('Testa o funcionamneto da aplicação', () => {
 
 	it('Um participante deve ter tickets equivalentes a sua pontuação', () => {
 		const raffle = createRaffle();
-		const bielframos = raffle.addParticipant('Bielframos', 6);
-		const lotto = raffle.addParticipant('Lotto', 10);
+		const bielframos = raffle.addParticipant('Bielframos', 1000);
+		const lotto = raffle.addParticipant('Lotto', 2480);
 		const tickets = raffle.getTickets();
 
 		const bielframosOccurences = tickets.filter((ticket) => ticket === bielframos.id).length;
 		const lottoOccurences = tickets.filter((ticket) => ticket === lotto.id).length;
-		expect(bielframosOccurences).toBe(6);
-		expect(lottoOccurences).toBe(10);
+		expect(bielframosOccurences).toBe(1000);
+		expect(lottoOccurences).toBe(2480);
 
 		const totalTickets = raffle.getTickets().length;
-		expect(totalTickets).toBe(16);
+		expect(totalTickets).toBe(3480);
 	});
 
 	it('Deve retornar o ID do ganhador de forma aleatória', () => {
