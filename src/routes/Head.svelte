@@ -1,5 +1,5 @@
 <script>
-	const appURL = 'https://example.com';
+	const appURL = 'https://ganhei.vercel.app';
 	const ogImageUrl = new URL('og-image.png', appURL).toString();
 </script>
 
