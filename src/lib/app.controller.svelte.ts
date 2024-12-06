@@ -15,7 +15,7 @@ export default function createController() {
 		const formData = new FormData(form);
 
 		const nickname = formData.get('nickname')?.toString();
-		const luckyPoints = formData.get('luckyPoints')?.toString() || '0';
+		const luckyPoints = formData.get('luckyPoints')?.toString() || '1';
 
 		if (nickname && luckyPoints) {
 			raffle.addParticipant(nickname, parseInt(luckyPoints));

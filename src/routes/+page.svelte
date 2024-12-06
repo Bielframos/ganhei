@@ -66,12 +66,15 @@
 					in:fly={{ y: 46, delay: 400 }}
 				>
 					<h4 class="text-2xl">E o vencedor é:</h4>
-					<span class="mt-4 text-center text-6xl font-black text-blue-12 text-white md:text-9xl"
+					<span class="mt-4 text-center text-6xl font-black text-white md:text-9xl"
 						>{winner.nickname}</span
 					>
 					<button
 						class="mt-4 rounded-2xl px-6 py-2 text-blue-9 transition-colors hover:bg-blue-3"
-						onclick={() => controller.handleClear()}>Novo sorteio</button
+						onclick={() => {
+							timeLeft = 5;
+							controller.handleClear();
+						}}>Novo sorteio</button
 					>
 				</div>
 			{:else}
@@ -149,7 +152,7 @@
 					<span class="text-3xl">{participant.nickname}</span>
 					<span
 						class="flex items-center gap-2 rounded-2xl bg-blue-3 px-4 py-2 data-[disabled=true]:hidden"
-						data-disabled={participant.luckyPoints === 0}>{participant.luckyPoints} <Clover /></span
+						data-disabled={participant.luckyPoints <= 1}>{participant.luckyPoints} <Clover /></span
 					>
 				</div>
 			{/each}
