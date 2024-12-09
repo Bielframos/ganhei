@@ -8,6 +8,10 @@ declare global {
 		// interface PageState {}
 		// interface Platform {}
 	}
+
+	interface Window {
+		gtag?: (event: string, eventName: string, options?: { [key: string]: any }) => void;
+	}
 }
 
 export {};

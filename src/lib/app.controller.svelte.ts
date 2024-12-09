@@ -30,6 +30,16 @@ export default function createController() {
 
 	function handleDraw() {
 		winnerId = raffle.draw();
+
+		if (winnerId) {
+			if (typeof window !== 'undefined' && window.gtag) {
+				window.gtag('event', 'raffle_draw', {
+					description: 'Sorteio realizado com sucesso',
+					timestamp: new Date().toISOString()
+				});
+			}
+		}
+
 		return winnerId;
 	}
 
